@@ -47,7 +47,8 @@ Before you begin, ensure you have the following installed on your system:
 ```
 
 ### Build and Run the Services in detach mode:
-```docker-compose up --build -d
+```
+docker-compose up --build -d
 ```
 
 ##  Access the Services:
