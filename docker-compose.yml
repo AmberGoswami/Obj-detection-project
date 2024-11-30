@@ -1,15 +1,10 @@
 version: '3.8'
 services:
-  ai_backend:
+  app:
     build: .
-    container_name: ai_backend
+    container_name: obj-detection-backend
     ports:
       - "8000:8000"
-
-  ui_backend:
-    build: .
-    container_name: ui_backend
-    ports:
       - "8001:8001"
-    depends_on:
-      - ai_backend
+    volumes:
+      - ./outputs:/app/outputs  
