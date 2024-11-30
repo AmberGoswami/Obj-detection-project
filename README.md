@@ -1,4 +1,4 @@
-# Object Detection Microservice
+# Object Detection Microservices
 
 ## Overview
 
@@ -29,33 +29,36 @@ This repository contains two microservices built with FastAPI to perform object 
    Processed Image          Detection Results
        |                          |
        +--------------------------+
+```
 
-
-# Prerequisites
-
+## Prerequisites
 Before you begin, ensure you have the following installed on your system:
+- **Docker**:
+  - Install Docker
+- **Docker Compose**:
+  - Install Docker Compose
 
-## Docker: Install Docker
-## Docker Compose: Install Docker Compose
 
+## Setup Instructions
 
-# Setup Instructions
-
-## Clone the Repository:
+### Clone the Repository:
 ```git clone <repository_url>
    cd <repository_name>
 ```
 
-## Build and Run the Services:
-```docker-compose up --build
+### Build and Run the Services in detach mode:
+```docker-compose up --build -d
 ```
 
 ##  Access the Services:
-### AI Backend: Runs on port 8000.
-### UI Backend: Runs on port 8001.
+- **AI Backend**:
+  - Runs on port 8000.
+- **UI Backend**:
+  - Runs on port 8001.
 
-#  File Structure
 
+##  File Structure
+```
 ├── outputs/
 │   ├── images/        
 │   ├── json/          
@@ -71,9 +74,8 @@ Before you begin, ensure you have the following installed on your system:
 ├── README.md          
 ├── requirements.txt   
 └── .gitignore         
+```
 
-
-# Endpoints
-## UI Backend (Port 8001): POST /upload: Upload an image for detection.
-
-## AI Backend (Port 8000): POST /detect: Perform object detection on an uploaded image.
+## Endpoints
+- **UI Backend (Port 8001)**: POST /upload: Upload an image for detection.
+- **AI Backend (Port 8000)**: POST /detect: Perform object detection on an uploaded image.
