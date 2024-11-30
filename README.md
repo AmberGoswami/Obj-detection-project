@@ -37,7 +37,8 @@ Before you begin, ensure you have the following installed on your system:
   - Install Docker
 - **Docker Compose**:
   - Install Docker Compose
-
+- **Git**:
+  - Install Git from Git's official site.
 
 ## Setup Instructions
 
@@ -77,6 +78,81 @@ docker-compose up --build -d
 └── .gitignore         
 ```
 
-## Endpoints
-- **UI Backend (Port 8001)**: POST /upload: Upload an image for detection.
-- **AI Backend (Port 8000)**: POST /detect: Perform object detection on an uploaded image.
+# Endpoints Documentation
+
+## **UI Backend Endpoints**
+
+### **1. Upload Image for Detection**
+**Endpoint:** `/upload`  
+**Method:** `POST`  
+
+**Description:**  
+Uploads an image to the **UI Backend**, which sends it to the **AI Backend** for object detection. Returns the processed image URL and detection results in JSON format.
+
+**Request Parameters:**  
+- **file**: (Required) The image file to be uploaded.  
+
+**Response:**  
+- **Success (200)**:  
+    ```json
+    {
+        "message": "Upload and detection completed successfully",
+        "result_image_path": "http://<ui-backend-url>/outputs/images/<processed_image>",
+        "result_json_path": "http://<ui-backend-url>/outputs/json/<detection_results_json>"
+    }
+    ```
+- **Error (400)**:  
+    ```json
+    {
+        "detail": "Uploaded file is not an image"
+    }
+    ```
+- **Error (500)**:  
+    ```json
+    {
+        "detail": "An unexpected error occurred: <error_message>"
+    }
+    ```
+
+---
+
+## **AI Backend Endpoints**
+
+### **1. Detect Objects in Image**
+**Endpoint:** `/detect`  
+**Method:** `POST`  
+
+**Description:**  
+Uploads an image to the **AI Backend** for object detection using YOLOv8. Returns the processed image and detection results as JSON.
+
+**Request Parameters:**  
+- **file**: (Required) The image file to be uploaded.  
+
+**Response:**  
+- **Success (200)**:  
+    ```json
+    {
+        "message": "Detection completed",
+        "image_path": "outputs/images/result_<uploaded_filename>",
+        "json_path": "outputs/json/result_<uploaded_filename>.json"
+    }
+    ```
+- **Error (415)**:  
+    ```json
+    {
+        "detail": "Unsupported media type. Please upload an image file with type: jpg, jpeg, png, bmp, gif."
+    }
+    ```
+- **Error (500)**:  
+    ```json
+    {
+        "detail": "Error performing object detection: <error_message>"
+    }
+    ```
+
+- **No Objects Detected (200)**:  
+    ```json
+    {
+        "message": "No objects detected in the image."
+    }
+    ```
