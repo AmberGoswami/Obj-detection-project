@@ -1,5 +1,5 @@
 # Base image
-FROM python:3.10
+FROM ultralytics/ultralytics:latest
 
 # Set working directory
 WORKDIR /app
