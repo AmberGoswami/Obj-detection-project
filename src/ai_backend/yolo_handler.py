@@ -6,7 +6,7 @@ from fastapi import HTTPException
 
 # Initialize YOLOv8 model
 try:
-    model = YOLO("yolov8l.pt")
+    model = YOLO("yolov8n.pt")
 except Exception as e:
     raise HTTPException(status_code=500, detail=f"Error loading YOLO model: {str(e)}")
 
