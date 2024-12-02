@@ -33,7 +33,7 @@ This repository contains service built with FastAPI to perform object detection 
 
 ## Demo
 
-- **[Watch the video](\Demo.mp4)**
+- **[Watch the video](Demo.mp4)**
 
 ## Prerequisites
 Before you begin, ensure you have the following installed on your system:
