@@ -32,8 +32,8 @@ This repository contains service built with FastAPI to perform object detection 
 ```
 
 ## Demo
+[Demo.webm](https://github.com/user-attachments/assets/d4e89dcf-28cb-42a4-b10b-c12eb9c5001d)
 
-- **[Watch the video](Demo.mp4)**
 
 ## Prerequisites
 Before you begin, ensure you have the following installed on your system:
