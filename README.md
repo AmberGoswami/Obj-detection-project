@@ -10,7 +10,7 @@ This repository contains service built with FastAPI to perform object detection 
 
 - **AI Backend**:
   - Receives images from the UI Backend.
-  - Performs object detection using the YOLOv8L model.
+  - Performs object detection using the YOLOv8n model.
   - Outputs a processed image with bounding boxes and a JSON file containing detection details.
 - **UI Component**:
   - Allows users to upload images.
@@ -30,6 +30,10 @@ This repository contains service built with FastAPI to perform object detection 
        |                          |
        +--------------------------+
 ```
+
+## Demo
+
+- **[Watch the video](\Demo.mp4)**
 
 ## Prerequisites
 Before you begin, ensure you have the following installed on your system:
