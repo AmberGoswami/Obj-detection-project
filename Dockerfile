@@ -14,7 +14,6 @@ COPY ./outputs /app/outputs
 
 # Expose ports
 EXPOSE 8000
-EXPOSE 8001
 
 # Command to start both services
-CMD ["sh", "-c", "uvicorn src.ai_backend.app:app --host 0.0.0.0 --port 8000 & uvicorn src.ui_backend.app:app --host 0.0.0.0 --port 8001"]
+CMD ["sh", "-c", "uvicorn src.ai_backend.app:app --host 0.0.0.0 --port 8000"]
